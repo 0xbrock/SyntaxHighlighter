@@ -67,8 +67,8 @@ sh.autoloader = function()
 	{
         var url = brushes[elements[i].params.brush],
             isLoaded = false;
-        for (var i = 0; i < brushesLoaded.length; i++) {
-            isLoaded = brushesLoaded[i] == url;
+        for (var j = 0; j < brushesLoaded.length; j++) {
+            isLoaded = (brushesLoaded[j] == url);
             if (isLoaded) {
                 break;
             }
