@@ -66,17 +66,14 @@ sh.autoloader = function()
 	for (i = 0; i < elements.length; i++)
 	{
         var url = brushes[elements[i].params.brush],
-            loaded = false
+            loaded = false;
         for (var i = 0; i < this.length; i++) {
             loaded = brushesLoaded[i] == url;
             if (loaded) {
                 break;
             }
         }
-        if (loaded) {
-            if (!url)
-                continue;
-
+        if (!loaded && url) {
             scripts[url] = false;
             loadScript(url);
             brushesLoaded.push(url);
