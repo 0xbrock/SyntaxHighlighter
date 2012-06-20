@@ -65,8 +65,15 @@ sh.autoloader = function()
 	// dynamically add <script /> tags to the document body
 	for (i = 0; i < elements.length; i++)
 	{
-        var url = brushes[elements[i].params.brush];
-        if (brushesLoaded.indexOf(url) == -1) {
+        var url = brushes[elements[i].params.brush],
+            loaded = false
+        for (var i = 0; i < this.length; i++) {
+            loaded = brushesLoaded[i] == url;
+            if (loaded) {
+                break;
+            }
+        }
+        if (loaded) {
             if (!url)
                 continue;
 
