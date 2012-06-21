@@ -28,8 +28,7 @@ sh.autoloader = function()
 		all = SyntaxHighlighter.all,
 		allCalled = false,
 		allParams = null,
-        i,
-        brushesLoaded = []
+        i
 		;
 		
 	SyntaxHighlighter.all = function(params)
@@ -65,18 +64,10 @@ sh.autoloader = function()
 	// dynamically add <script /> tags to the document body
 	for (i = 0; i < elements.length; i++)
 	{
-        var url = brushes[elements[i].params.brush],
-            isLoaded = false;
-        for (var j = 0; j < brushesLoaded.length; j++) {
-            isLoaded = (brushesLoaded[j] == url);
-            if (isLoaded) {
-                break;
-            }
-        }
-        if (!isLoaded && url) {
+        var url = brushes[elements[i].params.brush];
+        if (url && !scripts[url]) {
             scripts[url] = false;
             loadScript(url);
-            brushesLoaded.push(url);
         }
 	}
 	
