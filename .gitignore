@@ -3,7 +3,11 @@ build/output
 compass/.sass-cache
 site/output
 site/content/pub
+<<<<<<< HEAD
 
 /node_modules/
 /components/
 /pkg/
+=======
+.idea
+>>>>>>> 5331ef03453ebb225af71a2c997c03685f679346
